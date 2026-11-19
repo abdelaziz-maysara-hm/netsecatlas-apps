@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>NetSecAtlas.LockoutTracer</AssemblyName>
+    <RootNamespace>LockoutTracer</RootNamespace>
+    <Title>NetSec Atlas AD Lockout Tracer</Title>
+    <Description>Find the source of Active Directory account lockouts across domain controllers.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Diagnostics.EventLog" Version="10.0.0" />
+    <PackageReference Include="System.DirectoryServices" Version="10.0.0" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>NetSecAtlas.HealthCheck</AssemblyName>
+    <RootNamespace>HealthCheck</RootNamespace>
+    <Title>NetSec Atlas Security Health Check</Title>
+    <Description>Read-only Windows security posture check with plain-language advice.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Management" Version="10.0.0" />
+  </ItemGroup>
+</Project>

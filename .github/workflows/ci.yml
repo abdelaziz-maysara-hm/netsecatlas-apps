@@ -1,0 +1,86 @@
+name: build-test-release
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - run: dotnet build NetSecAtlas.Apps.slnx -c Release
+      - run: dotnet test tests/NetSecAtlas.Core.Tests -c Release --no-build --logger "trx;LogFileName=results.trx"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: tests/**/TestResults/*.trx
+
+  publish:
+    needs: test
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        rid: [win-x64, win-arm64]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Publish single-file exes
+        shell: pwsh
+        run: ./build/publish.ps1 -Rid ${{ matrix.rid }} -Out dist
+      - name: Capture real screenshots (x64 only)
+        if: matrix.rid == 'win-x64'
+        continue-on-error: true
+        shell: pwsh
+        run: ./build/screenshots.ps1 -Dist dist -Out screenshots
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exe-${{ matrix.rid }}
+          path: dist/*.exe
+      - uses: actions/upload-artifact@v4
+        if: matrix.rid == 'win-x64'
+        with:
+          name: screenshots
+          path: screenshots/*.png
+          if-no-files-found: warn
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: art
+      - name: Collect assets and checksums
+        run: |
+          mkdir -p rel
+          cp art/exe-win-x64/*.exe art/exe-win-arm64/*.exe rel/
+          if [ -d art/screenshots ]; then (cd art/screenshots && zip -q ../../rel/screenshots.zip *.png); fi
+          cd rel && sha256sum *.exe > SHA256SUMS.txt && cat SHA256SUMS.txt
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" rel/* --repo "${GITHUB_REPOSITORY}" --title "NetSec Atlas Apps ${GITHUB_REF_NAME}" \
+            --notes "Free, open-source Windows tools from NetSec Atlas (netsecatlas.com). Single-file, self-contained: no install and no .NET needed.
+
+          **Not code-signed yet**, so Windows SmartScreen may show *Windows protected your PC*: click *More info* → *Run anyway* only after checking the SHA-256 below against SHA256SUMS.txt.
+
+          Verify in PowerShell: \`Get-FileHash .\\NetSecAtlas-HashChecker-win-x64.exe -Algorithm SHA256\`"

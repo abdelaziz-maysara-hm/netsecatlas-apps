@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>NetSecAtlas.HashChecker</AssemblyName>
+    <RootNamespace>HashChecker</RootNamespace>
+    <Title>NetSec Atlas Hash Checker</Title>
+    <Description>Verify file downloads with MD5, SHA-1, SHA-256, SHA-384 and SHA-512.</Description>
+  </PropertyGroup>
+</Project>

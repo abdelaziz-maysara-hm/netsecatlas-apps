@@ -1,0 +1,20 @@
+<Project>
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationManifest>$(MSBuildThisFileDirectory)../build/app.manifest</ApplicationManifest>
+    <ApplicationIcon>$(MSBuildThisFileDirectory)../build/atlas.ico</ApplicationIcon>
+    <RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(MSBuildThisFileDirectory)../src/NetSecAtlas.Core/NetSecAtlas.Core.csproj" />
+    <ProjectReference Include="$(MSBuildThisFileDirectory)../src/NetSecAtlas.Ui/NetSecAtlas.Ui.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)../build/GlobalUsings.cs" Link="GlobalUsings.cs" />
+  </ItemGroup>
+</Project>

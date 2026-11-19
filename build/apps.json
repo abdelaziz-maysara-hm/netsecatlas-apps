@@ -1,0 +1,13 @@
+[
+  { "project": "HashChecker",    "slug": "hash-checker",           "delay": 6 },
+  { "project": "HealthCheck",    "slug": "security-health-check",  "delay": 12 },
+  { "project": "NetDoctor",      "slug": "network-troubleshooter", "delay": 30 },
+  { "project": "PasswordCheck",  "slug": "password-checker",       "delay": 4 },
+  { "project": "LockoutTracer",  "slug": "ad-lockout-tracer",      "delay": 4 },
+  { "project": "CertExpiry",     "slug": "tls-cert-expiry-checker","delay": 15 },
+  { "project": "HeaderAnalyzer", "slug": "email-header-analyzer",  "delay": 4 },
+  { "project": "PortCheck",      "slug": "port-checker",           "delay": 5 },
+  { "project": "WifiCheck",      "slug": "wifi-checker",           "delay": 4 },
+  { "project": "DnsBench",       "slug": "dns-benchmark",          "delay": 45 },
+  { "project": "PingMonitor",    "slug": "ping-monitor",           "delay": 14 }
+]

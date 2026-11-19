@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>NetSecAtlas.CertExpiry</AssemblyName>
+    <RootNamespace>CertExpiry</RootNamespace>
+    <Title>NetSec Atlas TLS Certificate Expiry Checker</Title>
+    <Description>Bulk TLS certificate expiry, name and chain checker with CSV export.</Description>
+  </PropertyGroup>
+</Project>

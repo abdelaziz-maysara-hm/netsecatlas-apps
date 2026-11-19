@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>NetSecAtlas.PortCheck</AssemblyName>
+    <RootNamespace>PortCheck</RootNamespace>
+    <Title>NetSec Atlas Port and Service Checker</Title>
+    <Description>Listening ports with owning processes, connections and remote port tests.</Description>
+  </PropertyGroup>
+</Project>

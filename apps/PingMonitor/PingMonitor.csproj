@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>NetSecAtlas.PingMonitor</AssemblyName>
+    <RootNamespace>PingMonitor</RootNamespace>
+    <Title>NetSec Atlas Ping Monitor</Title>
+    <Description>Continuous latency, jitter and packet-loss monitor with CSV export.</Description>
+  </PropertyGroup>
+</Project>

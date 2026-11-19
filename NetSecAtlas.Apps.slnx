@@ -1,0 +1,22 @@
+<Solution>
+  <Folder Name="/apps/">
+    <Project Path="apps/CertExpiry/CertExpiry.csproj" />
+    <Project Path="apps/DnsBench/DnsBench.csproj" />
+    <Project Path="apps/HashChecker/HashChecker.csproj" />
+    <Project Path="apps/HeaderAnalyzer/HeaderAnalyzer.csproj" />
+    <Project Path="apps/HealthCheck/HealthCheck.csproj" />
+    <Project Path="apps/LockoutTracer/LockoutTracer.csproj" />
+    <Project Path="apps/NetDoctor/NetDoctor.csproj" />
+    <Project Path="apps/PasswordCheck/PasswordCheck.csproj" />
+    <Project Path="apps/PingMonitor/PingMonitor.csproj" />
+    <Project Path="apps/PortCheck/PortCheck.csproj" />
+    <Project Path="apps/WifiCheck/WifiCheck.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/NetSecAtlas.Core/NetSecAtlas.Core.csproj" />
+    <Project Path="src/NetSecAtlas.Ui/NetSecAtlas.Ui.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/NetSecAtlas.Core.Tests/NetSecAtlas.Core.Tests.csproj" />
+  </Folder>
+</Solution>
