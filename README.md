@@ -3,6 +3,22 @@
 Free, open-source Windows tools from [NetSec Atlas](https://netsecatlas.com) for everyday users, network admins and security teams.
 Bilingual (English / العربية with full right-to-left layout), single-file, no installer, no .NET install needed.
 
+
+## Status (22 November 2026, Cairo time)
+
+- **Code:** 11 WPF apps, shared core, unit tests, MIT, .NET 10 LTS. Last commit: `8337fb6` (19 Nov 2026, 12:40).
+- **CI:** [run 44507937129](https://github.com/abdelaziz-maysara-hm/netsecatlas-apps/actions/runs/44507937129) succeeded the same day (tests + publish win-x64 and win-arm64, ~5m47s). The **release job was skipped** because it only runs on a `v*` tag, so there is **no GitHub Release and no public SHA-256 file yet**. Build artifacts (exes + screenshots) from that run remain downloadable from the Actions tab until about 17 February 2027.
+- **Not done:** tagging `v0.1.0` (this creates the Release with `.exe` + `SHA256SUMS.txt`); code signing; Microsoft Store listing (needs the owner's Store account); and the netsecatlas.com `/programs` download pages (not shipped). See the site repo's [docs/ROADMAP.md](https://github.com/abdelaziz-maysara-hm/Tech-Insights/blob/main/docs/ROADMAP.md).
+- **To publish a release:** `git tag v0.1.0 && git push origin v0.1.0` (or create the tag in GitHub). The workflow will attach the exes and checksums.
+
+---
+
+## الحالة (22 نوفمبر 2026، توقيت القاهرة)
+
+- أحد عشر برنامجًا جاهزة في الشيفرة، والبناء والاختبارات نجحت في 19 نوفمبر.
+- **لا يوجد إصدار GitHub بعد** لأن خطوة الإطلاق تنتظر وسمًا مثل `v0.1.0`. ملفات exe المؤقتة ما زالت في صفحة Actions حتى حوالي 17 فبراير 2027.
+- لم يُنشَر شيء على Microsoft Store، والبرامج غير موقَّعة، وصفحات التحميل على الموقع غير مكتملة. التفاصيل في خارطة طريق الموقع.
+
 **Privacy:** no telemetry, no ads, no accounts. Apps only touch the network when the feature itself needs it (for example a DNS benchmark or a TLS check), and the password checker sends only a 5-character hash prefix to the Have I Been Pwned range API.
 
 | App | What it does | Network use |
