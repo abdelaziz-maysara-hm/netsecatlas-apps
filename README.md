@@ -4,6 +4,11 @@ Free, open-source Windows tools from [NetSec Atlas](https://netsecatlas.com) for
 Bilingual (English / العربية with full right-to-left layout), single-file, no installer, no .NET install needed.
 
 
+
+> **Superseded (22 November 2026).** These 11 apps are now part of one program, **NetSec Atlas Tools 2.0**, together with the NetSecAtlasTools calculators (subnet, VLSM, range to CIDR, IP, MAC, encoding, timestamp). New code, tests and releases live in [Tech-Insights/desktop](https://github.com/abdelaziz-maysara-hm/Tech-Insights/tree/main/desktop). Download from [netsecatlas.com/en/tools](https://netsecatlas.com/en/tools). This repository is kept for history and is no longer updated; it never had a release.
+>
+> **تم الاستبدال (22 نوفمبر 2026).** البرامج الأحد عشر هنا أصبحت جزءًا من برنامج واحد هو **NetSec Atlas Tools 2.0** مع حاسبات NetSecAtlasTools. الكود والإصدارات الجديدة في [Tech-Insights/desktop](https://github.com/abdelaziz-maysara-hm/Tech-Insights/tree/main/desktop)، والتحميل من [netsecatlas.com/ar/tools](https://netsecatlas.com/ar/tools). هذا المستودع محفوظ للتاريخ فقط.
+
 ## Status (22 November 2026, Cairo time)
 
 - **Code:** 11 WPF apps, shared core, unit tests, MIT, .NET 10 LTS. Last commit: `8337fb6` (19 Nov 2026, 12:40).
@@ -37,7 +42,7 @@ Bilingual (English / العربية with full right-to-left layout), single-file
 
 ## Download
 
-Get the `.exe` files from [Releases](https://github.com/abdelaziz-maysara-hm/netsecatlas-apps/releases/latest) or from [netsecatlas.com/en/programs](https://netsecatlas.com/en/programs).
+Get the `.exe` files from [Releases](https://github.com/abdelaziz-maysara-hm/netsecatlas-apps/releases/latest) or, for the merged program, from [netsecatlas.com/en/tools](https://netsecatlas.com/en/tools).
 Always compare the SHA-256 with `SHA256SUMS.txt`:
 
 ```powershell
@@ -69,7 +74,7 @@ CI (`.github/workflows/ci.yml`) builds and tests on `windows-latest`, publishes 
 
 البرامج: فاحص البصمة، فحص صحة الأمان، مشخّص الشبكة، فاحص كلمات المرور، متتبع قفل حسابات AD، فاحص انتهاء شهادات TLS، محلل رؤوس البريد، فاحص المنافذ والخدمات، فاحص Wi-Fi، مقارنة خوادم DNS، مراقب Ping.
 
-**التنزيل:** من صفحة [الإصدارات](https://github.com/abdelaziz-maysara-hm/netsecatlas-apps/releases/latest) أو من [netsecatlas.com/ar/programs](https://netsecatlas.com/ar/programs). قارن دائمًا بصمة SHA-256 بملف `SHA256SUMS.txt`.
+**التنزيل:** من صفحة [الإصدارات](https://github.com/abdelaziz-maysara-hm/netsecatlas-apps/releases/latest) أو البرنامج المدمج من [netsecatlas.com/ar/tools](https://netsecatlas.com/ar/tools). قارن دائمًا بصمة SHA-256 بملف `SHA256SUMS.txt`.
 
 > **البرامج غير موقّعة رقميًا حتى الآن**، لذلك قد يظهر تحذير SmartScreen «حمى Windows جهاز الكمبيوتر». تحقق من البصمة ثم اختر «مزيد من المعلومات ← التشغيل على أي حال».
 
